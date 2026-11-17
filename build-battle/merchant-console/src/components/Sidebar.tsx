@@ -149,6 +149,7 @@ const Sidebar = React.forwardRef<HTMLDivElement, React.ComponentProps<"div">>(
               <DrawerClose className="absolute right-4 top-4" asChild>
                 <Button
                   variant="ghost"
+                  aria-label="Close sidebar"
                   className="!p-2 text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-50"
                 >
                   <RiCloseLine className="size-5 shrink-0" aria-hidden="true" />

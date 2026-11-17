@@ -49,7 +49,11 @@ export function PaymentsFilterBar({
           apply({ search })
         }}
       >
+        <label htmlFor="payments-search" className="sr-only">
+          Search payments
+        </label>
         <Input
+          id="payments-search"
           type="search"
           name="search"
           value={search}
@@ -59,11 +63,14 @@ export function PaymentsFilterBar({
         />
       </form>
 
+      <label htmlFor="payments-status" className="sr-only">
+        Status
+      </label>
       <Select
         value={current.status || "all"}
         onValueChange={(status) => apply({ status })}
       >
-        <SelectTrigger className="w-full py-1.5 sm:w-40">
+        <SelectTrigger id="payments-status" className="w-full py-1.5 sm:w-40">
           <SelectValue placeholder="Status" />
         </SelectTrigger>
         <SelectContent align="end">
@@ -75,13 +82,16 @@ export function PaymentsFilterBar({
         </SelectContent>
       </Select>
 
+      <label htmlFor="payments-merchant" className="sr-only">
+        Merchant
+      </label>
       <Select
         value={current.merchantId || "all"}
         onValueChange={(merchantId) =>
           apply({ merchantId: merchantId === "all" ? "" : merchantId })
         }
       >
-        <SelectTrigger className="w-full py-1.5 sm:w-52">
+        <SelectTrigger id="payments-merchant" className="w-full py-1.5 sm:w-52">
           <SelectValue placeholder="All merchants" />
         </SelectTrigger>
         <SelectContent align="end">
